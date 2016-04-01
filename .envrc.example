@@ -1,0 +1,2 @@
+export GDRIVE_CLIENT_ID="xxxxxxxxxxx.apps.googleusercontent.com"
+export GDRIVE_CLIENT_SECRET="xxxxxxxxxxxx"
