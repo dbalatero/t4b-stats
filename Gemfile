@@ -20,3 +20,8 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'zeus'
 end
+
+group :test do
+  gem 'vcr'
+  gem 'webmock'
+end
