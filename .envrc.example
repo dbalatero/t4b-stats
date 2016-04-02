@@ -1,2 +1,5 @@
 export GDRIVE_CLIENT_ID="xxxxxxxxxxx.apps.googleusercontent.com"
 export GDRIVE_CLIENT_SECRET="xxxxxxxxxxxx"
+export GDRIVE_REFRESH_TOKEN="xxxxxxxxxx"
+export SPREADSHEET_KEY="xxxxxxxxxx"
+export COLOR_SCRIPT_KEY="xxxxxxxxxx"
