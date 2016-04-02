@@ -120,6 +120,7 @@ GEM
       multi_xml (~> 0.5)
       rack (>= 1.2, < 3)
     os (0.9.6)
+    pg (0.18.4)
     pry (0.10.3)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -232,6 +233,7 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   fabrication
   google_drive
+  pg
   pry-byebug
   pry-rails
   pry-stack_explorer
