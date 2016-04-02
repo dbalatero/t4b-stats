@@ -22,6 +22,7 @@ group :development, :test do
 end
 
 group :test do
+  gem 'fabrication'
   gem 'vcr'
   gem 'webmock'
 end
