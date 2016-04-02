@@ -47,6 +47,7 @@ GEM
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
     byebug (8.2.2)
+    coderay (1.1.1)
     concurrent-ruby (1.0.1)
     debug_inspector (0.0.2)
     erubis (2.7.0)
@@ -114,6 +115,18 @@ GEM
       multi_xml (~> 0.5)
       rack (>= 1.2, < 3)
     os (0.9.6)
+    pry (0.10.3)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    pry-byebug (3.3.0)
+      byebug (~> 8.0)
+      pry (~> 0.10)
+    pry-rails (0.3.4)
+      pry (>= 0.9.10)
+    pry-stack_explorer (0.4.9.2)
+      binding_of_caller (>= 0.7)
+      pry (>= 0.9.11)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -156,6 +169,7 @@ GEM
       faraday (~> 0.9)
       jwt (~> 1.5)
       multi_json (~> 1.10)
+    slop (3.6.0)
     sprockets (3.5.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -188,8 +202,10 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt (~> 3.1.7)
-  byebug
   google_drive
+  pry-byebug
+  pry-rails
+  pry-stack_explorer
   rails (= 4.2.6)
   sass-rails (~> 5.0)
   sqlite3
