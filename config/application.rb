@@ -31,5 +31,11 @@ module T4bStats
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    %w[
+      app/lib
+    ].each do |path|
+      config.autoload_paths << Rails.root.join(path)
+    end
   end
 end
