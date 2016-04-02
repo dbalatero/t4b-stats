@@ -3,6 +3,15 @@ class States
     @by_code ||= STATES.keys.map(&:to_s)
   end
 
+  def self.by_name
+    @by_name ||= STATES.values.map(&:to_s)
+  end
+
+  def self.code_from_name(name)
+    code = STATES.invert[name]
+    code.to_s if code
+  end
+
   STATES = {
     AK: "Alaska",
     AL: "Alabama",

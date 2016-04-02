@@ -1,6 +1,16 @@
 require 'rails_helper'
 
 describe Assignment do
+  describe 'inferring state' do
+    it "should infer state from group_name" do
+      subject.group_name = "3/30 - CA Phonebank # 10"
+
+      expect {
+        subject.valid?
+      }.to change { subject.state }.to("CA")
+    end
+  end
+
   describe 'updating row color' do
     let!(:assignment) do
       Fabricate :assignment, row_color: "#ffffff"

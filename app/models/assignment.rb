@@ -12,6 +12,8 @@ class Assignment < ActiveRecord::Base
 
   validates :status, inclusion: { in: STATUSES.values.uniq }
 
+  before_validation :try_to_infer_state
+
   def row_color=(hex_color)
     if hex_color != self.row_color
       update_status_from_row_color(hex_color)
@@ -21,6 +23,10 @@ class Assignment < ActiveRecord::Base
   end
 
   private
+
+  def try_to_infer_state
+    self.state ||= best_state_code_match
+  end
 
   def update_status_from_row_color(color)
     new_status = STATUSES[color]
@@ -34,5 +40,19 @@ class Assignment < ActiveRecord::Base
     when "completed"
       self.completed_at ||= Time.current
     end
+  end
+
+  def best_state_code_match
+    return unless group_name.present?
+
+    States.by_code.each do |code|
+      return code if group_name.include?(code)
+    end
+
+    States.by_name.each do |name|
+      return States.code_from_name(name) if group_name.include?(name)
+    end
+
+    nil
   end
 end

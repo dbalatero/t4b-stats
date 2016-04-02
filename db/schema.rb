@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160402204943) do
+ActiveRecord::Schema.define(version: 20160402235038) do
 
   create_table "assignments", force: :cascade do |t|
     t.date     "upload_date"
@@ -29,12 +29,13 @@ ActiveRecord::Schema.define(version: 20160402204943) do
     t.string   "reminder_start"
     t.string   "reminder_end"
     t.string   "row_color"
-    t.string   "status",                default: "prepping"
+    t.string   "status",                          default: "prepping"
     t.datetime "ready_for_upload_at"
     t.datetime "ready_for_hustling_at"
     t.datetime "completed_at"
-    t.datetime "created_at",                                 null: false
-    t.datetime "updated_at",                                 null: false
+    t.datetime "created_at",                                           null: false
+    t.datetime "updated_at",                                           null: false
+    t.string   "state",                 limit: 2
   end
 
 end
