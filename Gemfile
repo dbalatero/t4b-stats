@@ -8,6 +8,7 @@ gem 'haml'
 gem 'pg'
 gem 'rails', '4.2.6'
 gem 'sass-rails', '~> 5.0'
+gem 'stencil', github: 'cohitre/stencil'
 gem 'uglifier', '>= 1.3.0'
 gem 'unicorn'
 
