@@ -14,6 +14,34 @@ class Assignment < ActiveRecord::Base
 
   before_validation :try_to_infer_state
 
+  def prepping?
+    status == 'prepping'
+  end
+
+  def stuck?
+    status == 'stuck'
+  end
+
+  def ready_for_upload?
+    status == 'ready_for_upload'
+  end
+
+  def ready_for_hustling?
+    status == 'ready_for_hustling'
+  end
+
+  def almost_completed?
+    status == 'almost_completed'
+  end
+
+  def completed?
+    status == 'completed'
+  end
+
+  def canceled?
+    status == 'canceled'
+  end
+
   def row_color=(hex_color)
     if hex_color != self.row_color
       update_status_from_row_color(hex_color)
