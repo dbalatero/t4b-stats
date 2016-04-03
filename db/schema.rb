@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160402235038) do
+ActiveRecord::Schema.define(version: 20160403001204) do
 
   create_table "assignments", force: :cascade do |t|
     t.date     "upload_date"
@@ -37,5 +37,7 @@ ActiveRecord::Schema.define(version: 20160402235038) do
     t.datetime "updated_at",                                           null: false
     t.string   "state",                 limit: 2
   end
+
+  add_index "assignments", ["upload_date"], name: "index_assignments_on_upload_date"
 
 end
