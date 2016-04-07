@@ -39,6 +39,11 @@ footer {
 
   a {
     color: #FFFF6A;
+
+    &:hover {
+      color: #FFFF6A;
+      text-decoration: underline;
+    }
   }
 }
 
