@@ -1,0 +1,21 @@
+.callout
+  %h5= title
+
+  - if progress_bars.empty?
+    %p
+      Waiting on new daily data&hellip;
+
+  - progress_bars.each do |bar|
+    %span.progress-title
+      %span.has-tip.right{ data: { tooltip: true, "disable-hover" => "false" },
+        aria: { haspopup: true },
+        tabindex: 1,
+        title: bar.tooltip }
+        = bar.name
+      (#{number_with_delimiter(bar.count)} of #{number_with_delimiter(total)})
+
+    .progress.small-12{ class: bar.css_class }
+      %span.progress-meter{ style: "width: #{[10, bar.percentage].max}%" }
+
+        %p.progress-meter-text
+          #{bar.percentage}%

@@ -1,1 +1,22 @@
-%h1 Hello
+.row
+  .column.small-12
+    %h3.header
+      %span.large Text
+      for Bernie Stats
+
+.row
+  .column.small-12.medium-6.large-4
+    = StatBoxStencil.new(title: "Daily Totals", stats: @stats[:overall_totals]).render
+
+  - @stats[:by_state].sort.each do |state, data|
+    .column.small-12.medium-6.large-4
+      = StatBoxStencil.new(title: "#{States.name_from_code(state)}", stats: data).render
+
+
+%footer.row
+  .small-12
+    %p
+      Created by #{link_to "@dbalatero", "https://twitter.com/dbalatero"}.
+      Stats are updated every 10 minutes.
+      Contribute code #{link_to "here", "https://github.com/dbalatero/t4b-stats"}.
+      Grab a #{link_to "JSON feed", stats_path(format: 'json')}.

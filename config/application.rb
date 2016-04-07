@@ -35,6 +35,7 @@ module T4bStats
     %w[
       app/lib
       app/services
+      app/stencils
     ].each do |path|
       config.autoload_paths << Rails.root.join(path)
     end

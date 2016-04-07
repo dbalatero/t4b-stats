@@ -7,6 +7,10 @@ class States
     @by_name ||= STATES.values.map(&:to_s)
   end
 
+  def self.name_from_code(code)
+    STATES[code]
+  end
+
   def self.code_from_name(name)
     code = STATES.invert[name]
     code.to_s if code
@@ -68,5 +72,5 @@ class States
     WI: "Wisconsin",
     WV: "West Virginia",
     WY: "Wyoming"
-  }
+  }.with_indifferent_access.freeze
 end

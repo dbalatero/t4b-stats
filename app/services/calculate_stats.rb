@@ -10,8 +10,10 @@ class CalculateStats
   end
 
   def run
-    totals_by_state.merge \
+    {
+      by_state: totals_by_state,
       overall_totals: totals_for(assignments)
+    }.with_indifferent_access
   end
 
   private
@@ -21,7 +23,7 @@ class CalculateStats
       [state, totals_for(records)]
     end
 
-    Hash[by_state]
+    Hash[by_state].with_indifferent_access
   end
 
   def totals_for(assignments_subset)
@@ -29,8 +31,9 @@ class CalculateStats
       [status, records.map(&:supporters).sum]
     end
 
-    Hash[status_totals].merge \
-      total_supporters: assignments_subset.map(&:supporters).sum
+    Hash[status_totals]
+      .merge(total_supporters: assignments_subset.map(&:supporters).sum)
+      .with_indifferent_access
   end
 
   def assignments

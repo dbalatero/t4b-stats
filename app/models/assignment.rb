@@ -7,7 +7,8 @@ class Assignment < ActiveRecord::Base
     "#f9cb9c" => "almost_completed", # 98% of tasks are done, few stragglers
     "#ea9999" => "almost_completed",
     "#9900ff" => "completed", # 100% are done
-    "#ff0000" => "canceled" # canceled for some reason (event canceled?)
+    "#ff0000" => "canceled", # canceled for some reason (event canceled?)
+    "#dd7e6b" => "canceled"
   }
 
   validates :status, inclusion: { in: STATUSES.values.uniq }
