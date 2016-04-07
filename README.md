@@ -2,11 +2,17 @@
 
 Codebase for the Text 4 Bernie stats page. Pull requests welcome!
 
+## Requirements
+
+* rvm
+* direnv
+* sqlite3 for development/test
+
 ## Getting started
 
 ```
 git clone git@github.com:dbalatero/t4b-stats.git
-cd t4b-stats
+cd t4b-stats (should create a gemset)
 bundle install
 rake db:create db:migrate
 cp .envrc.example .envrc
