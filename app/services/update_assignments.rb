@@ -12,7 +12,7 @@ class UpdateAssignments
         assignment.attributes = row
         assignment.save!
       rescue
-        puts "Got attributes for bad record: #{attributes.inspect}"
+        puts "Got attributes for bad record: #{assignment.attributes.inspect}"
         raise
       end
     end
