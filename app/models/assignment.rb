@@ -5,6 +5,7 @@ class Assignment < ActiveRecord::Base
     "#ffff00" => "ready_for_upload", # ready to upload to hustle
     "#00ff00" => "ready_for_hustling", # in hustlers' phones
     "#f9cb9c" => "almost_completed", # 98% of tasks are done, few stragglers
+    "#00ffff" => "almost_completed", # edge case
     "#ea9999" => "almost_completed",
     "#9900ff" => "completed", # 100% are done
     "#ff0000" => "canceled", # canceled for some reason (event canceled?)
