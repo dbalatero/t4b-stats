@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/dbalatero/t4b-stats.svg?branch=master)](https://travis-ci.org/dbalatero/t4b-stats)
+
 # t4b-stats
 
 Codebase for the Text 4 Bernie stats page. Pull requests welcome!
